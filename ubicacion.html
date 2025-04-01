@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chicken Family - Ubicaciones</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+
+/* FONDO */
+
+body {
+            background-image: url('https://img.freepik.com/premium-vector/crispy-fried-chicken-seamless-pattern-fast-food-pattern-background_505564-1795.jpg?w=740');
+            background-size: cover;
+            background-position: center;
+            padding: 100px 0;
+            color: rgb(0, 0, 0);
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            position: relative;
+        }
+
+        
+        /* Menú de navegación */
+        nav {
+            background-color: #333;
+            color: white;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            padding: 10px 0;
+        }
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        nav ul li {
+            margin: 0 20px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2em;
+            text-transform: uppercase;
+            padding: 10px 20px;
+            display: block;
+            transition: background-color 0.3s;
+        }
+        nav ul li a:hover {
+            background-color: #ff6600;
+            border-radius: 5px;
+        }
+
+        /* Sección de Ubicaciones */
+        .location-section {
+            padding: 50px;
+            text-align: center;
+        }
+
+        .location-item {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            text-align: left;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .location-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .location-item h3 {
+            color: #333;
+            font-size: 2em;
+            margin: 0;
+        }
+
+        .location-item p {
+            color: #555;
+            font-size: 1.1em;
+        }
+
+        .location-item .view-details {
+            background-color: #ff6600;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-size: 1.2em;
+            margin-top: 15px;
+            display: inline-block;
+            transition: background-color 0.3s;
+        }
+
+        .location-item .view-details:hover {
+            background-color: #e65c00;
+        }
+
+        /* Mapa de ubicación */
+        .location-map {
+            width: 100%;
+            height: 400px;
+            margin-top: 20px;
+        }
+
+        .location-details {
+            display: none;
+            margin-top: 20px;
+            background-color: #ff6600;
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Menú de navegación -->
+    <nav>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="menu.html">Menú</a></li>
+            <li><a href="ubicaciones.html" class="active">Ubicaciones</a></li>
+            <li><a href="ordenar.html">Ordenar</a></li>
+            <li><a href="conocenos.html">Conócenos</a></li>
+        </ul>
+    </nav>
+
+    <!-- Sección de Ubicaciones -->
+    <section class="location-section" id="ubicaciones">
+        <h1>Ubicaciones de Chicken Family</h1>
+        <p>PROXIMAMENTE Encontraras nuevas sucursales más cercana a ti y para que puedas disfrutar de nuestras alitas deliciosas.</p>
+
+        <div class="location-item" onclick="showLocationDetails('ubicacion1')">
+            <h3>Ubicación 1 - NEZAHUALCOYOTL</h3>
+            <p>
+            <a href="javascript:void(0)" class="view-details">¡Las mejores alitas de Nezahualcóyotl te están esperando! 🍗🔥
+
+                Ubicación: Calle El Capiro 123 ( Entre Av . Chimalhuacán y Cielito Lindo )
+                
+                
+                Ven a disfrutar de un festín de sabor en el corazón de Neza. ¡Alitas frescas, salsas irresistibles y un ambiente único te están esperando! ¡No pierdas la oportunidad de vivir una experiencia llena de sabor en el mejor lugar de la ciudad!</a>
+        </div>
+
+
+    <script>
+        // Mostrar los detalles de la ubicación seleccionada
+        function showLocationDetails(locationId) {
+            // Ocultar todos los detalles
+            const allLocations = document.querySelectorAll('.location-details');
+            allLocations.forEach(location => location.style.display = 'none');
+
+            // Mostrar los detalles de la ubicación seleccionada
+            const selectedLocation = document.getElementById(locationId);
+            selectedLocation.style.display = 'block';
+
+            // Inicializar el mapa para esa ubicación (usando la API de Google Maps, por ejemplo)
+            initMap(locationId);
+        }
+
+        // Inicializar el mapa con la API de Google Maps
+        function initMap(locationId) {
+            let mapOptions = {
+                zoom: 15,
+                center: { lat: 19.432608, lng: -99.133209 } // Coordenadas por defecto (Ciudad de México)
+            };
+
+            if (locationId === 'ubicacion1') {
+                mapOptions.center = { lat: 19.432608, lng: -99.133209 }; // Ubicación 1
+            } else if (locationId === 'ubicacion2') {
+                mapOptions.center = { lat: 19.444444, lng: -99.111111 }; // Ubicación 2
+            } else if (locationId === 'ubicacion3') {
+                mapOptions.center = { lat: 19.456789, lng: -99.123456 }; // Ubicación 3
+            }
+
+            const map = new google.maps.Map(document.getElementById(locationId.replace('ubicacion', 'map')), mapOptions);
+            new google.maps.Marker({
+                position: mapOptions.center,
+                map: map,
+                title: "Ubicación"
+            });
+        }
+    </script>
+
+    <!-- Agregar Google Maps API -->
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_API_KEY&callback=initMap">
+    </script>
+
+</body>
+</html>

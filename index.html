@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chicken Family - Venta de Alitas de Pollo</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f7f7f7;
+            color: #333;
+        }
+
+        /* Menú de navegación */
+        nav {
+            background-color: #333;
+            color: white;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            padding: 10px 0;
+        }
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        nav ul li {
+            margin: 0 20px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2em;
+            text-transform: uppercase;
+            padding: 10px 20px;
+            display: block;
+            transition: background-color 0.3s;
+        }
+        nav ul li a:hover {
+            background-color: #ff6600;
+            border-radius: 5px;
+        }
+
+        /* TITULOS */
+         /* TITULOS */
+         header {
+            background-image: url('https://img.freepik.com/premium-vector/crispy-fried-chicken-seamless-pattern-fast-food-pattern-background_505564-1795.jpg?w=740');
+            background-size: cover;
+            background-position: center;
+            padding: 100px 0;
+            color: rgb(0, 0, 0);
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            position: relative;
+        }
+
+        header h1 {
+            font-size: 4em;
+            font-weight: bold;
+            text-transform: uppercase;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        header p {
+            font-size: 1.5em;
+            margin-top: 20px;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        /* Animaciones */
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        /* Barra de texto animado (VEN Y DISFRUTA) */
+        .marquee-container {
+            position: relative;
+            width: 100%;
+            height: 40px;
+            background-color: #ff6600;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .marquee {
+            white-space: nowrap;
+            font-size: 2em;
+            color: rgb(0, 0, 0);
+            font-weight: bold;
+            animation: marquee 10s linear infinite;
+        }
+
+        @keyframes marquee {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }  /* TITULOS */
+        header {
+            background-image: url('https://img.freepik.com/premium-vector/crispy-fried-chicken-seamless-pattern-fast-food-pattern-background_505564-1795.jpg?w=740');
+            background-size: cover;
+            background-position: center;
+            padding: 100px 0;
+            color: rgb(0, 0, 0);
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            position: relative;
+        }
+
+        header h1 {
+            font-size: 4em;
+            font-weight: bold;
+            text-transform: uppercase;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        header p {
+            font-size: 1.5em;
+            margin-top: 20px;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        /* Animaciones */
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        /* Barra de texto animado (VEN Y DISFRUTA) */
+        .marquee-container {
+            position: relative;
+            width: 100%;
+            height: 40px;
+            background-color: #ff6600;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .marquee {
+            white-space: nowrap;
+            font-size: 2em;
+            color: rgb(0, 0, 0);
+            font-weight: bold;
+            animation: marquee 10s linear infinite;
+        }
+
+        @keyframes marquee {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+
+        /* Animaciones */
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        /* Barra de texto animado (VEN Y DISFRUTA) */
+        .marquee-container {
+            position: relative;
+            width: 100%;
+            height: 40px;
+            background-color: #ff6600;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .marquee {
+            white-space: nowrap;
+            font-size: 2em;
+            color: rgb(0, 0, 0);
+            font-weight: bold;
+            animation: marquee 10s linear infinite;
+        }
+
+        @keyframes marquee {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+
+        /* HAZ TU PEDIDO AHORA */
+        .cta-button {
+            background-color: #ff6600;
+            color: rgb(0, 0, 0);
+            padding: 20px 40px;
+            border-radius: 30px;
+            font-size: 1.2em;
+            text-decoration: none;
+            text-transform: uppercase;
+            margin-top: 40px;
+            display: inline-block;
+            transition: background-color 0.3s;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .cta-button:hover {
+            background-color: #e65c00;
+        }
+
+        /* Estilo para las secciones */
+        section {
+            padding: 50px 0;
+        }
+
+        /* Interacciones de los elementos del menú */
+        .menu-item {
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .menu-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .menu-item h3 {
+            background-color: #ff6600;
+            color: white;
+            padding: 10px 0;
+            margin: 0;
+            font-size: 1.5em;
+            text-transform: uppercase;
+        }
+
+        .menu-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .menu-item:hover img {
+            transform: scale(1.1);
+        }
+
+        /* Estilo para los sliders */
+        .slider {
+            width: 100%;
+            height: 400px;
+            overflow: hidden;
+            position: relative;
+            margin-top: 50px;
+        }
+
+        .slider img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            animation: slide 15s infinite;
+        }
+
+        @keyframes slide {
+            0% { transform: translateX(0); }
+            25% { transform: translateX(-100%); }
+            50% { transform: translateX(-200%); }
+            75% { transform: translateX(-300%); }
+            100% { transform: translateX(0); }
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Menú de navegación -->
+    <nav>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="menu.html">Menú</a></li>
+            <li><a href="ubicacion.html">Ubicacion</a></li>
+            <li><a href="ordenar.html">Ordenar</a></li>
+            <li><a href="conocenos.html">Conócenos</a></li>
+        </ul>
+    </nav>
+
+    <!-- Sección de Inicio -->
+    <header id="inicio">
+        <h1>Bienvenidos a Chicken Family</h1>
+        <p>Las mejores alitas de pollo, ¡como en casa!</p>
+        <a href="menu.html" class="cta-button">¡Haz tu pedido ahora!</a>
+        <div class="promo">¡Descuento del 10% en tu primer pedido!</div>
+    </header>
+
+    <!-- Barra de texto animado (marquee) -->
+    <div class="marquee-container">
+        <div class="marquee">
+            ¡Ven a disfrutar de las mejores alitas de pollo en Chicken Family!
+        </div>
+    </div>
+
+    <!-- Sección de Slider -->
+    <div class="slider-container" style="position: relative; width: 100%; max-width: 1200px; margin: auto;">
+        <!-- Slideshow images -->
+        <div class="slider">
+            <div class="slide fade">
+                <img src="https://via.placeholder.com/1200x400?text=Alitas+Cl%C3%A1sicas" alt="Alitas Clásicas">
+            </div>
+            <div class="slide fade">
+                <img src="https://via.placeholder.com/1200x400?text=Alitas+BBQ" alt="Alitas BBQ">
+            </div>
+            <div class="slide fade">
+                <img src="https://via.placeholder.com/1200x400?text=Alitas+Picantes" alt="Alitas Picantes">
+            </div>
+            <div class="slide fade">
+                <img src="https://via.placeholder.com/1200x400?text=Tiras+de+Pollo" alt="Tiras de Pollo">
+            </div>
+        </div>
+    
+        <!-- Prev/Next controls -->
+        <a class="prev" onclick="moveSlide(-1)">&#10094;</a>
+        <a class="next" onclick="moveSlide(1)">&#10095;</a>
+    </div>
+
+    <!-- Dot indicators -->
+    <div style="text-align: center;">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+        <span class="dot" onclick="currentSlide(4)"></span>
+    </div>
+
+    <!-- JavaScript for Slider Functionality -->
+    <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+    
+        function moveSlide(n) {
+            showSlides(slideIndex += n);
+        }
+    
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+    
+        function showSlides(n) {
+            let slides = document.getElementsByClassName("slide");
+            let dots = document.getElementsByClassName("dot");
+    
+            if (n > slides.length) {
+                slideIndex = 1;
+            }
+            if (n < 1) {
+                slideIndex = slides.length;
+            }
+    
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+            }
+    
+            for (let i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+    
+            slides[slideIndex - 1].style.display = "block";  
+            dots[slideIndex - 1].className += " active";
+        }
+    
+        // Auto slide every 3 seconds
+        setInterval(() => {
+            moveSlide(1);
+        }, 3000);
+    </script>
+
+</body>
+</html>
